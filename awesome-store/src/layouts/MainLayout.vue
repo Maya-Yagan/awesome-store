@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lfSf">
     <q-header elevated class="text-white bg-black q-py-md">
       <q-toolbar >
         <q-toolbar-title class="q-mx-sm">
@@ -14,6 +14,9 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <q-footer elevated class="bg-grey-8 text-white" style="height: 70px;">
+        <q-item class="items-center justify-center">Designed by&nbsp;©<a href="https://github.com/Maya-Yagan" class="text-white">Maya Yagan</a></q-item>
+    </q-footer>
   </q-layout>
 </template>
 
