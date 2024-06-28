@@ -2,12 +2,12 @@
   <q-layout view="lHh Lpr lfSf">
     <q-header elevated class="text-white bg-black q-py-md">
       <q-toolbar >
-        <q-toolbar-title class="q-mx-sm">
-          Awesome Store
+        <q-toolbar-title to="/#" class="q-mx-sm">
+          <q-btn class="text-capitalize text-h5 text-amber-1" stretch flat label="Awesome Store" to="/"/>
         </q-toolbar-title>
-      <q-btn class="q-mx-sm text-capitalize" stretch flat label="Categories" />
+      <q-btn class="q-mx-sm text-capitalize" stretch flat label="Categories" to="/categories" />
       <q-btn class="q-mx-sm text-capitalize" stretch flat label="My Account" />
-      <q-btn class="q-mx-sm text-capitalize" stretch flat label="Shopping Cart" />
+      <q-btn class="q-mx-sm text-capitalize" stretch flat label="Shopping Cart" to="/cart" />
       <q-btn class="q-mx-sm text-capitalize" stretch flat label="Sign in/Sign up" />
       </q-toolbar>
     </q-header>

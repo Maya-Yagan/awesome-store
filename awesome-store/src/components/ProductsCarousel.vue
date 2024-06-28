@@ -5,10 +5,10 @@
     transition-next="slide-left"
     swipeable
     animated
-    control-color="amber-1"
+    control-color="grey-9"
     padding
     arrows
-    class="bg-grey-9 shadow-2 rounded-borders q-pa-md q-my-md"
+    class="bg-amber-1 shadow-2 rounded-borders q-pa-md"
   >
     <q-carousel-slide :name="1" class="column no-wrap">
       <div
@@ -19,6 +19,7 @@
       <product-card image="src/assets/p3.jpg"/>
       <product-card image="src/assets/p4.jpg"/>
       <product-card image="src/assets/p5.jpg"/>
+      <product-card image="src/assets/p6.jpg"/>
       </div>
     </q-carousel-slide>
     <q-carousel-slide :name="2" class="column no-wrap">
