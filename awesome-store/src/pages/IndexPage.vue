@@ -81,13 +81,42 @@
         </div>
       </q-carousel-slide>
     </q-carousel>
-    <products-carousel />
+    <products-carousel @response="(id) => addToCart(products[id-1])" :products="products"/>
   </q-page>
 </template>
 
 <script setup lang="ts">
 import ProductsCarousel from 'src/components/ProductsCarousel.vue';
 import { ref } from 'vue';
+import { Product } from 'src/types/Product';
+import { useCartStore } from 'src/stores/cart';
 const slide = ref(1);
 const autoplay = ref(true);
+const store = useCartStore()
+function addToCart(product: Product){
+  store.addToCart(product)
+}
+const products: Array<Product>= [
+  {
+    id: 1, name: 'product1', price: 290, image: 'src/assets/p1.jpg'
+  },
+  {
+    id: 2, name: 'product2', price: 154, image: 'src/assets/p2.jpg'
+  },
+  {
+    id: 3, name: 'product3', price: 240, image: 'src/assets/p3.jpg'
+  },
+  {
+    id: 4, name: 'product4', price: 100, image: 'https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg'
+  },
+  {
+    id: 5, name: 'product5', price: 190, image: 'https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg'
+  },
+  {
+    id: 6, name: 'product6', price: 240, image: 'src/assets/p6.jpg'
+  },
+  {
+    id: 7, name: 'product7', price: 240, image: 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg'
+  },
+]
 </script>
