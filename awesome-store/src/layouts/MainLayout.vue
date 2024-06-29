@@ -7,8 +7,11 @@
         </q-toolbar-title>
       <q-btn class="q-mx-sm text-capitalize" stretch flat label="Categories" to="/categories" />
       <q-btn class="q-mx-sm text-capitalize" stretch flat label="My Account" />
-      <q-btn class="q-mx-sm text-capitalize" stretch flat label="Shopping Cart" to="/cart" />
       <q-btn class="q-mx-sm text-capitalize" stretch flat label="Sign in/Sign up" />
+      <q-btn class="q-mx-sm text-capitalize" stretch flat stack icon="shopping_bag" to="/cart">
+        <q-badge color="amber-6" floating class="text-grey-9 text-bold">{{ itemsCount }}</q-badge>
+        ${{ totalPrice }}
+      </q-btn>
       </q-toolbar>
     </q-header>
     <q-page-container>
@@ -21,7 +24,9 @@
 </template>
 
 <script setup lang="ts">
-defineOptions({
-  name: 'MainLayout'
-});
+  import { useCartStore } from 'src/stores/cart';
+  import { computed } from 'vue';
+  const store = useCartStore()
+  const itemsCount = computed(() => store.itemsCount())
+  const totalPrice = computed(() => store.getTotalPrice)
 </script>
