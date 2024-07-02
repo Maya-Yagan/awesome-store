@@ -95,28 +95,29 @@ const autoplay = ref(true);
 const store = useCartStore()
 function addToCart(product: Product){
   store.addToCart(product)
+  console.log(product)
 }
 const products: Array<Product>= [
   {
-    id: 1, name: 'product1', price: 290, image: 'src/assets/p1.jpg'
+    id: 1, name: 'product1', price: 290, image: 'src/assets/p1.jpg', short_description: 'Some awesome clothing', full_description: '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON', quantity: 0
   },
   {
-    id: 2, name: 'product2', price: 154, image: 'src/assets/p2.jpg'
+    id: 2, name: 'product2', price: 154, image: 'src/assets/p2.jpg', short_description: 'Some awesome clothing', full_description: '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON', quantity: 0
   },
   {
-    id: 3, name: 'product3', price: 240, image: 'src/assets/p3.jpg'
+    id: 3, name: 'product3', price: 240, image: 'src/assets/p3.jpg', short_description: 'Some awesome clothing', full_description: '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON', quantity: 0
   },
   {
-    id: 4, name: 'product4', price: 100, image: 'https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg'
+    id: 4, name: 'product4', price: 100, image: 'https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg', short_description: 'Some awesome clothing', full_description: '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON', quantity: 0
   },
   {
-    id: 5, name: 'product5', price: 190, image: 'https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg'
+    id: 5, name: 'product5', price: 190, image: 'https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg', short_description: 'Some awesome clothing', full_description: '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON', quantity: 0
   },
   {
-    id: 6, name: 'product6', price: 240, image: 'src/assets/p6.jpg'
+    id: 6, name: 'product6', price: 240, image: 'src/assets/p6.jpg', short_description: 'Some awesome clothing', full_description: '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON', quantity: 0
   },
   {
-    id: 7, name: 'product7', price: 240, image: 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg'
+    id: 7, name: 'product7', price: 240, image: 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg', short_description: 'Some awesome clothing', full_description: '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON', quantity: 0
   },
 ]
 </script>
