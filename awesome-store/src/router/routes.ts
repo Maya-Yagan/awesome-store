@@ -20,6 +20,13 @@ const routes: RouteRecordRaw[] = [
       { path: '', component: () => import('pages/CartPage.vue')}
     ],
   },
+  {
+    path: '/signin',
+    component: () => import('layouts/SignPageLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/SignPage.vue')}
+    ],
+  },
 
   // Always leave this as last one,
   // but you can also remove it
