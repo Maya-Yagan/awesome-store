@@ -7,7 +7,7 @@
         </q-toolbar-title>
       <q-btn class="q-mx-sm text-capitalize" stretch flat label="Categories" to="/categories" />
       <q-btn class="q-mx-sm text-capitalize" stretch flat label="My Account" />
-      <q-btn class="q-mx-sm text-capitalize" stretch flat label="Sign in/Sign up" />
+      <q-btn class="q-mx-sm text-capitalize" stretch flat label="Sign in/Sign up" to="/signin"/>
       <q-btn class="q-mx-sm text-capitalize" stretch flat stack icon="shopping_bag" to="/cart">
         <q-badge color="amber-6" floating class="text-grey-9 text-bold">{{ itemsCount }}</q-badge>
         ${{ totalPrice }}
