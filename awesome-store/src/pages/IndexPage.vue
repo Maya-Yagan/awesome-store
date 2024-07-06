@@ -87,15 +87,24 @@
 
 <script setup lang="ts">
 import ProductsCarousel from 'src/components/ProductsCarousel.vue';
-import { ref } from 'vue';
+import { ref, toRefs } from 'vue';
 import { Product } from 'src/types/Product';
 import { useCartStore } from 'src/stores/cart';
+import { useRouter } from 'vue-router';
+import { useUserStore } from 'src/stores/user';
+
+const router = useRouter()
 const slide = ref(1);
 const autoplay = ref(true);
-const store = useCartStore()
+const cartStore = useCartStore()
+const userStore = useUserStore()
+const { isSignedIn } = toRefs(userStore)
+
 function addToCart(product: Product){
-  store.addToCart(product)
-  console.log(product)
+  if(isSignedIn.value)
+    cartStore.addToCart(product)
+  else
+  router.push('/signin')
 }
 const products: Array<Product>= [
   {
@@ -120,4 +129,6 @@ const products: Array<Product>= [
     id: 7, name: 'product7', price: 240, image: 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg', short_description: 'Some awesome clothing', full_description: '100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON', quantity: 0
   },
 ]
-</script>
+</script>, toRefsimport { useUserStore } from 'src/stores/user';
+import { useRouter } from 'vue-router';
+
