@@ -6,7 +6,7 @@
         <q-card-section class="text-h5">
           Cart Items
           <span class="text-grey-7">
-            ({{ store.itemsCount() }})
+            ({{ cartStore.itemsCount }})
           </span>
         </q-card-section>
         <q-scroll-area
@@ -68,20 +68,29 @@
 import { useCartStore } from 'src/stores/cart';
 import { Product } from 'src/types/Product';
 import ProductsCarousel from 'src/components/ProductsCarousel.vue';
+import { useUserStore } from 'src/stores/user';
+import { toRefs } from 'vue';
+import { useRouter } from 'vue-router';
 
-const store = useCartStore()
-const cartItems = store.cartItems
+const router = useRouter()
+const cartStore = useCartStore()
+const cartItems = cartStore.cartItems
+const userStore = useUserStore()
+const { isSignedIn } = toRefs(userStore)
+
 function addToCart(product: Product){
-  store.addToCart(product)
-  console.log(product)
+  if(isSignedIn.value)
+    cartStore.addToCart(product)
+  else
+  router.push('/signin')
 }
 
 function removeItem(product: Product){
-    store.removeFromCart(product)
+  cartStore.removeFromCart(product)
 }
 
 function removeOneItem(product: Product){
-  store.removeOneItem(product)
+  cartStore.removeOneItem(product)
 }
 
 const products: Array<Product>= [
